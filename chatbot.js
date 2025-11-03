@@ -96,7 +96,7 @@ function filtrarContenidosRelevantes(pregunta, contenidos, limite = 15) {
  */
 export async function obtenerRecomendacion(pregunta, contenidos) {
   // 1. FILTRAR contenidos relevantes
-  const contenidosFiltrados = filtrarContenidosRelevantes(pregunta, contenidos, 15);
+  const contenidosFiltrados = filtrarContenidosRelevantes(pregunta, contenidos, 5);
   
   // 2. SIMPLIFICAR estructura (solo campos importantes)
   const contenidosSimplificados = contenidosFiltrados.map(simplificarContenido);
@@ -114,7 +114,7 @@ El usuario pregunta:
 "${pregunta}"
 
 Tu tarea:
-- Recomienda entre 2 y 4 títulos de los proporcionados que mejor se ajusten a la pregunta.
+- Recomienda entre 2 y 3 títulos de los proporcionados que mejor se ajusten a la pregunta.
 - Explica brevemente (1-2 líneas) por qué recomiendas cada uno.
 - Si ninguno encaja perfectamente, recomienda los más cercanos y explica por qué.
 - Menciona el título, duración, edad recomendada y tema principal.
