@@ -1,0 +1,187 @@
+/* Import Mulish font from Google Fonts (matching Filmpedia) */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800&display=swap');
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Chat container - Dark theme */
+.chat-container {
+    width: 100%;
+    max-width: 450px;
+    height: 600px;
+    background-color: #ff7538;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header */
+.chat-header {
+    background-color: #f5f5f5;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.chat-header h1 {
+    color: #ff7538;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Messages area */
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #e8e8e8;
+}
+
+/* Custom scrollbar */
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: #2a2a2a;
+    border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #444444;
+    border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #555555;
+}
+
+/* Message bubbles */
+.message {
+    padding: 12px 16px;
+    border-radius: 16px;
+    max-width: 75%;
+    word-wrap: break-word;
+    font-size: 15px;
+    line-height: 1.5;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* User message - Blue accent (Filmpedia blue) */
+.user-message {
+    background-color: #2463fe;
+    color: #ffffff;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+/* Bot message - Orange accent (Filmpedia orange) */
+.bot-message {
+    background-color: #ffffff;
+    color: #000000;
+    align-self: flex-start;
+    border: 1px solid #ff7538;
+    border-bottom-left-radius: 4px;
+}
+
+/* Input area */
+.chat-input {
+    padding: 16px 20px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    gap: 10px;
+}
+
+/* Input field */
+#userInput {
+    flex: 1;
+    padding: 12px 16px;
+    background-color: #ffffff;
+    border: 1px solid #ff7538;
+    border-radius: 12px;
+    color: #333333;
+    font-family: 'Mulish', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#userInput::placeholder {
+    color: #999999;
+}
+
+#userInput:focus {
+    border-color: #2463fe;
+}
+
+/* Send button - Filmpedia blue */
+#sendButton {
+    padding: 12px 24px;
+    background-color: #2463fe;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Mulish', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#sendButton:hover {
+    background-color: #1a4fd1;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(36, 99, 254, 0.4);
+}
+
+#sendButton:active {
+    transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    .chat-container {
+        max-width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .message {
+        max-width: 85%;
+    }
+}
