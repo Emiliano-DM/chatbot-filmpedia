@@ -1,3 +1,5 @@
+import { procesarPregunta } from "./chatbot.js";
+
 // Chat functionality
 const chatMessages = document.getElementById('chatMessages');
 const userInput = document.getElementById('userInput');
@@ -13,10 +15,11 @@ function addMessage(text, isUser) {
 }
 
 // Mock bot response (placeholder for future Gemini API integration)
-function getBotResponse(userMessage) {
+async function getBotResponse(userMessage) {
     // This function will later call your backend/Gemini API
     // For now, return a mock response
-    return 'To-Do: message from gemini';
+    const respuesta = await procesarPregunta(userMessage);
+    return respuesta;
 }
 
 // Send message function 
