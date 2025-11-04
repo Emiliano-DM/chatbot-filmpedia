@@ -115,12 +115,17 @@ El usuario pregunta:
 
 Tu tarea:
 - Recomienda entre 2 y 3 títulos de los proporcionados que mejor se ajusten a la pregunta.
-- Explica brevemente (1-2 líneas) por qué recomiendas cada uno.
-- Si ninguno encaja perfectamente, recomienda los más cercanos y explica por qué.
-- Menciona el título, duración, edad recomendada y tema principal.
-- Incluye el enlace al final de cada recomendación.
+- Si los resultados no coinciden perfectamente con lo solicitado, inicia con una breve explicación de 1-2 líneas indicando por qué.
+- Formatea la respuesta EXACTAMENTE así:
 
-Responde en español de forma clara y concisa.
+- **Título de la película** - [Ver más](enlace)
+  - Duración: X minutos
+  - Edad recomendada: X años
+  - Tema: tema principal
+  - Calificación: X/10
+  - Breve explicación (1-2 líneas) de por qué se recomienda
+
+Responde en español usando SOLO el formato markdown especificado.
 `;
 
   const modelName = "models/gemini-2.0-flash-exp";

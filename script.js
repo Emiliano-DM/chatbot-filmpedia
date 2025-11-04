@@ -9,7 +9,15 @@ const sendButton = document.getElementById('sendButton');
 function addMessage(text, isUser) {
     const messageDiv = document.createElement('div');
     messageDiv.className = isUser ? 'message user-message' : 'message bot-message';
-    messageDiv.textContent = text;
+
+    if (isUser) {
+        // User messages: plain text
+        messageDiv.textContent = text;
+    } else {
+        // Bot messages: convert markdown to HTML
+        messageDiv.innerHTML = marked.parse(text);
+    }
+
     chatMessages.appendChild(messageDiv);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }

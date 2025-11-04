@@ -114,6 +114,57 @@ body {
     border-bottom-left-radius: 4px;
 }
 
+/* Markdown elements in bot messages */
+.bot-message strong {
+    font-weight: 700;
+    color: #000000;
+}
+
+.bot-message ul {
+    margin: 8px 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.bot-message ul li {
+    margin: 6px 0;
+    padding-left: 0;
+}
+
+.bot-message ul ul {
+    padding-left: 20px;
+    margin-top: 4px;
+}
+
+.bot-message ul ul li {
+    font-size: 14px;
+    color: #333333;
+    margin: 3px 0;
+}
+
+.bot-message ul ul li::before {
+    content: "• ";
+    color: #ff7538;
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.bot-message a {
+    color: #2463fe;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.bot-message a:hover {
+    color: #1a4fd1;
+    text-decoration: underline;
+}
+
+.bot-message p {
+    margin: 8px 0;
+}
+
 /* Input area */
 .chat-input {
     padding: 16px 20px;
